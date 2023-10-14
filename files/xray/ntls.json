@@ -1,0 +1,96 @@
+{
+    "log": {
+      "access": "/var/log/xray/access-ntls.log",
+      "error": "/var/log/xray/error-ntls.log",
+      "loglevel": "warning"
+    },
+    "inbounds": [
+      {
+        "port": 80,
+        "protocol": "vless",
+        "settings": {
+          "clients": [],
+          "decryption": "none",
+          "fallbacks": [
+            {
+              "dest": 4551,
+              "xver": 1
+            },
+            {
+              "path": "/vless",
+              "dest": 4552,
+              "xver": 1
+            },
+            {
+              "path": "/vmess",
+              "dest": 4553,
+              "xver": 1
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "none"
+        }
+      },
+      {
+        "port": 4551,
+        "listen": "127.0.0.1",
+        "protocol": "trojan",
+        "settings": {
+          "clients": [],
+          "fallbacks": [
+            {
+              "dest": 60000
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "none",
+          "tcpSettings": {
+            "acceptProxyProtocol": true
+          }
+        }
+      },
+      {
+        "port": 4552,
+        "listen": "127.0.0.1",
+        "protocol": "vless",
+        "settings": {
+          "clients": [],
+          "decryption": "none"
+        },
+        "streamSettings": {
+          "network": "ws",
+          "security": "none",
+          "wsSettings": {
+            "acceptProxyProtocol": true,
+            "path": "/vless"
+          }
+        }
+      },
+      {
+        "port": 4553,
+        "listen": "127.0.0.1",
+        "protocol": "vmess",
+        "settings": {
+          "clients": []
+        },
+        "streamSettings": {
+          "network": "ws",
+          "security": "none",
+          "wsSettings": {
+            "acceptProxyProtocol": true,
+            "path": "/vmess"
+          }
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "freedom"
+      }
+    ]
+  }
+  

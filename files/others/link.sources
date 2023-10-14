@@ -1,0 +1,3 @@
+linkGo="https://go.dev/dl/go1.21.1.linux-amd64.tar.gz" # Source: https://go.dev/dl/
+linkEasyRSA="https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.6/EasyRSA-3.1.6.tgz" # Source: https://github.com/OpenVPN/easy-rsa/releases
+linkStunnel="https://www.stunnel.org/downloads/stunnel-5.71.tar.gz" # Source: https://www.stunnel.org/downloads.html
