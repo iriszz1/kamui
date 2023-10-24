@@ -46,7 +46,7 @@ VPN services installer. For Debian 11 or later. Created by Iriszz.
 - Domain hosted on DigitalOcean or CloudFlare
 - Able to login as 'root'
 - [DigitalOcean API Token](https://cloud.digitalocean.com/settings/api/tokens)
-- [CLoudflare API Token](https://dash.cloudflare.com/profile/api-tokens) (Edit zone DNS)
+- [Cloudflare API Token](https://dash.cloudflare.com/profile/api-tokens) (Edit zone DNS)
 
 ## Rebuild VPS (Optional)
 1. Download 'Debian Network Reinstall Script'.
