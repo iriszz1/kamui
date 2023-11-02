@@ -15,7 +15,7 @@ until [[ ! -z $username ]] && [[ ! $(cat /kamui/user_database.json | jq -r '(.xr
 	[[ $(cat /kamui/user_database.json | jq -r '(.xray.vmess[] | select(.username == "'$username'")).username') ]] && echo -e "[ERROR] User already exist."
 	[[ $username != ?(+|-)+([a-zA-Z0-9]) ]] && echo -e "[ERROR] Invalid characters."
 done
-until [[ $days == ?(+|-)+([0-9]) ]] && [[ ! $days -lt 1 ]]; do
+until [[ $days == ?(+|-)+([0-9]) ]] && [[ ! $days -lt 0 ]]; do
 	read -p "Duration (days) : " days
 	[[ $days != ?(+|-)+([0-9]) ]] && echo -e "[ERROR] Invalid characters."
 	[[ $days -lt 1 ]] && echo -e "[ERROR] Invalid duration."

@@ -16,7 +16,7 @@ until [[ ! -z $username ]] && [[ ! $(cat /kamui/user_database.json | jq -r '(.xr
 	[[ $username != ?(+|-)+([a-zA-Z0-9]) ]] && echo -e "[ERROR] Invalid characters."
 done
 read -p "Password : " password
-until [[ $days == ?(+|-)+([0-9]) ]] && [[ ! $days -lt 1 ]]; do
+until [[ $days == ?(+|-)+([0-9]) ]] && [[ ! $days -lt 0 ]]; do
 	read -p "Duration (days) : " days
 	[[ $days != ?(+|-)+([0-9]) ]] && echo -e "[ERROR] Invalid characters."
 	[[ $days -lt 1 ]] && echo -e "[ERROR] Invalid duration."
