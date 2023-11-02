@@ -25,7 +25,6 @@ cat << \EOF > /tmp/update_script.sh
 
 source /kamui/params
 
-screen -XS multilogin quit
 wget -O /kamui/menu/ssh/add.sh "${repoDir}files/menu/ssh/add.sh"
 wget -O /kamui/menu/ssh/delete.sh "${repoDir}files/menu/ssh/delete.sh"
 wget -O /kamui/menu/ssh/extend.sh "${repoDir}files/menu/ssh/extend.sh"
