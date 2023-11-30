@@ -309,7 +309,6 @@ while true; do
 			echo ""
 			curl -sL yabs.sh | bash -s -- -i
 			echo ""
-			rm -f geekbench_claim.url
 			read -n 1 -r -s -p $"Press any key to continue ... "
 			;;
 		6)
